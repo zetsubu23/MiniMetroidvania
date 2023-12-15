@@ -4,14 +4,27 @@ var movement = Vector2()
 var canMove = true
 var isAnimating = false
 var attack = false
+var isDead = false
+var isHitted = true
 
 signal hit(damage)
+signal death
 
 var currentDirection = 0
 @onready var wave = preload("res://Scenes/Wave.tscn")
 
 func _ready():
 	add_to_group("Player")
+	if isHitted:
+		canMove = false
+		emit_signal("hit", 5)
+		$HitArea/HitCollision.disabled = true
+		$CharacterAnim.play("hurt")
+		await $CharacterAnim.animation_finished
+		canMove = true
+		await get_tree().create_timer(10).timeout
+		$HitArea/HitCollision.disabled = false
+		isHitted = false
 	
 func _physics_process(delta):
 	current_gravity()
@@ -30,33 +43,40 @@ func _physics_process(delta):
 	movement = movement.normalized() * PlayerState.speed * delta
 	move_and_slide()
 
-func _process(delta):
-	pass
-
 func animation():
 
-	if currentDirection == -1 and is_on_floor() and !attack:
+	if currentDirection == -1 and is_on_floor() and !attack and !isDead:
 		$CharacterAnim.flip_h = true
 		$CharacterAnim.animation = "walking"
 
 
-	if currentDirection == 1 and is_on_floor() and !attack:
+	if currentDirection == 1 and is_on_floor() and !attack and !isDead:
 		$CharacterAnim.flip_h = false
 		$CharacterAnim.animation = "walking"
 	
 #
-	if !is_on_floor() and !attack:
+	if !is_on_floor() and !attack and !isDead:
 		$CharacterAnim.animation = "jumping"
 		
-	if movement == Vector2.ZERO and is_on_floor() and !attack:
+	if movement == Vector2.ZERO and is_on_floor() and !attack and !isDead:
 		$CharacterAnim.animation = "idle"
 	
 	$CharacterAnim.play()
 	
-	if attack:
+	if attack and !isDead:
 		$CharacterAnim.play("attack")
 		await $CharacterAnim.animation_finished
+		if currentDirection == 1:
+			$CharacterAnim.flip_h = false
+		else:
+			$CharacterAnim.flip_h = true
 		attack = false
+	
+	if PlayerState.health <= 0 and !isDead:
+		canMove = false
+		$CharacterAnim.play("death")
+		await $CharacterAnim.animation_finished
+		emit_signal("death")
 	
 func player_movement(delta):
 	
@@ -71,11 +91,23 @@ func player_movement(delta):
 	if jump and is_on_floor():
 		PlayerState.fall_velocity -= PlayerState.jump_height
 		
-	if PlayerState.canRoll and Input.is_action_just_pressed("down") and movement.x != 0 and currentDirection != 0:
+	if PlayerState.haveShield and Input.is_action_just_pressed("down") and is_on_floor():
+		velocity = Vector2.ZERO
+		movement = Vector2.ZERO
+		canMove = false
+		$HitArea/HitCollision.disabled = true
+		$CharacterAnim.play("pray")
+		await $CharacterAnim.animation_finished
+		canMove = true
+		$HitArea/HitCollision.disabled = false
+		
+	if PlayerState.canRoll and Input.is_action_just_pressed("roll") \
+	and movement.x != 0 and currentDirection != 0 and is_on_floor():
 		
 		canMove = false
 		currentDirection = 2
 		$HitArea/HitCollision.disabled = true
+		$RegullarCollision.disabled = true
 		
 		$CharacterAnim.play("rolling")
 		
@@ -88,7 +120,8 @@ func player_movement(delta):
 		else:
 			currentDirection = 0
 		
-		$HitArea/HitCollision.disabled = true
+		$HitArea/HitCollision.disabled = false
+		$RegullarCollision.disabled = false
 		canMove = true
 
 func current_gravity():
@@ -114,11 +147,14 @@ func check_attack():
 		wave_projectile.check_direction(-1)
 	get_parent().add_child(wave_projectile)
 
-
-
 func _on_hit_area_body_entered(body):
-	if body.is_in_group("Enemy"):
-		emit_signal("hit", body.damage)
-	if body.is_in_group("Item"):
-		print(body)
-		emit_signal("hit", body.damage)
+	if body.is_in_group("Enemy") and !isHitted:
+		canMove = false
+		emit_signal("hit", 5)
+		$HitArea/HitCollision.disabled = true
+		$CharacterAnim.play("hurt")
+		await $CharacterAnim.animation_finished
+		canMove = true
+		await get_tree().create_timer(10).timeout
+		$HitArea/HitCollision.disabled = false
+		isHitted = false

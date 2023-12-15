@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c80xcboy47foc"
-path="res://.godot/imported/Roll.png-0198ea5709cae68f916382bdeace1386.ctex"
+uid="uid://g741ekens77"
+path="res://.godot/imported/Sprout_idle.png-7ee1e441e70ccd6581fdb759e462e2d0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Roll.png"
-dest_files=["res://.godot/imported/Roll.png-0198ea5709cae68f916382bdeace1386.ctex"]
+source_file="res://Assets/Sprout/Sprout_idle.png"
+dest_files=["res://.godot/imported/Sprout_idle.png-7ee1e441e70ccd6581fdb759e462e2d0.ctex"]
 
 [params]
 

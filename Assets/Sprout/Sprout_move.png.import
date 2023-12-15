@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cpn1dlpxxm44"
-path="res://.godot/imported/Jump.png-f373097a3a65e68854819e9ff55796d3.ctex"
+uid="uid://cgcn8myd8ry2h"
+path="res://.godot/imported/Sprout_move.png-643f63649be42a046e438f27840e0068.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Jump.png"
-dest_files=["res://.godot/imported/Jump.png-f373097a3a65e68854819e9ff55796d3.ctex"]
+source_file="res://Assets/Sprout/Sprout_move.png"
+dest_files=["res://.godot/imported/Sprout_move.png-643f63649be42a046e438f27840e0068.ctex"]
 
 [params]
 

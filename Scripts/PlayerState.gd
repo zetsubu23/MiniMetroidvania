@@ -16,4 +16,4 @@ extends Node
 
 
 @export var canRoll = false
-@export var haveShield = false
+@export var haveShield = true

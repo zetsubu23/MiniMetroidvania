@@ -1,21 +1,32 @@
-[gd_scene load_steps=5 format=3 uid="uid://ded2ee5j1uhic"]
+[gd_scene load_steps=6 format=3 uid="uid://ded2ee5j1uhic"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_4qic6"]
 [ext_resource type="PackedScene" uid="uid://dra3h6qmatw81" path="res://Scenes/player.tscn" id="1_jx6ty"]
 [ext_resource type="PackedScene" uid="uid://c3dg256hrishj" path="res://Scenes/Level1.tscn" id="2_teif6"]
-[ext_resource type="PackedScene" uid="uid://dxfimpgrwejhl" path="res://Scenes/RollPoison.tscn" id="3_06tvi"]
+[ext_resource type="PackedScene" uid="uid://bse1d80og72wj" path="res://Scenes/RollPoison.tscn" id="3_06tvi"]
+[ext_resource type="PackedScene" uid="uid://bv05ibnhsv4ol" path="res://Scenes/JumpPoison.tscn" id="5_m53mc"]
 
 [node name="World" type="Node2D"]
 position = Vector2(19, -1)
 script = ExtResource("1_4qic6")
 
 [node name="Player" parent="." instance=ExtResource("1_jx6ty")]
-position = Vector2(32, 61)
+position = Vector2(14, 59)
 
 [node name="Level1" parent="." instance=ExtResource("2_teif6")]
-position = Vector2(-18, -47)
+position = Vector2(-15, -51)
+layer_1/name = ""
+layer_1/enabled = true
+layer_1/modulate = Color(1, 1, 1, 1)
+layer_1/y_sort_enabled = false
+layer_1/y_sort_origin = 0
+layer_1/z_index = 0
+layer_1/tile_data = PackedInt32Array()
 
 [node name="RollPoison" parent="." instance=ExtResource("3_06tvi")]
 position = Vector2(109, 143)
+
+[node name="JumpPoison" parent="." instance=ExtResource("5_m53mc")]
+position = Vector2(194, 110)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]

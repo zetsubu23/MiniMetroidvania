@@ -6,4 +6,3 @@ extends Area2D
 
 func _ready():
 	add_to_group("Item")
-	print(get_groups())

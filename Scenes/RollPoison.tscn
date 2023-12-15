@@ -1,7 +1,18 @@
-[gd_scene load_steps=6 format=3 uid="uid://dxfimpgrwejhl"]
+[gd_scene load_steps=6 format=3 uid="uid://bse1d80og72wj"]
 
-[ext_resource type="Script" path="res://Scripts/RollPoison.gd" id="1_5f85u"]
 [ext_resource type="Texture2D" uid="uid://y3hhxjdoyq4s" path="res://Assets/Potions - Full, Corked.png" id="2_8od3c"]
+
+[sub_resource type="GDScript" id="GDScript_w1frr"]
+script/source = "extends \"res://Scripts/item.gd\"
+
+
+
+func _on_body_entered(body):
+	if body.is_in_group(\"Player\"):
+		PlayerState.inventory[self.Name] = self
+		PlayerState.canRoll = true
+		queue_free()
+"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_o4t1m"]
 size = Vector2(13, 16)
@@ -22,7 +33,8 @@ animations = [{
 }]
 
 [node name="RollPoison" type="Area2D"]
-script = ExtResource("1_5f85u")
+script = SubResource("GDScript_w1frr")
+Name = "Roll"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 2)

@@ -1,27 +1,47 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1702634521
+::res://::1702658976
 export_presets.cfg::TextFile::-1::1702574211::0::1::::<><>::
-::res://Assets/::1702581995
-Attacks.png::CompressedTexture2D::6342765054862924730::1702573225::1702573225::1::::<><>::
-Idle.png::CompressedTexture2D::6949717132722323123::1702569418::1702569420::1::::<><>::
-Jump.png::CompressedTexture2D::172179280410537711::1702573213::1702571060::1::::<><>::
+::res://Assets/::1702658958
 Potions - Full, Corked.png::CompressedTexture2D::1742773566029421292::1702578978::1702578980::1::::<><>::
-Roll.png::CompressedTexture2D::7142082788995283522::1702581995::1702581995::1::::<><>::
-Run.png::CompressedTexture2D::4102952663306489269::1702570110::1702570111::1::::<><>::
 Tiles.png::CompressedTexture2D::5170654863780258998::1702569536::1702569536::1::::<><>::
 Wave.png::CompressedTexture2D::7253513770447791247::1702575257::1702575272::1::::<><>::
-::res://Scenes/::1702641125
-Level1.tscn::PackedScene::6744736264835861551::1702580547::0::1::::<><>::uid://cfwx6vjgc08va
-player.tscn::PackedScene::8354186622767372524::1702641125::0::1::::<><>::res://Scripts/player.gd<>uid://c6aq3cvvbljrf::::res://Assets/Idle.png<>uid://cwmqockt0x12u::::res://Assets/Attacks.png<>uid://cpn1dlpxxm44::::res://Assets/Jump.png<>uid://byprbb0d4gucb::::res://Assets/Run.png<>uid://c80xcboy47foc::::res://Assets/Roll.png
-PlayerState.tscn::PackedScene::7185997263870803248::1702641125::0::1::::<><>::res://Scripts/PlayerState.gd
-World.gd::GDScript::-1::1702636006::0::1::::<>Node2D<>::
-RollPoison.tscn::PackedScene::8784435306914385469::1702641125::0::1::::<><>::res://Scripts/RollPoison.gd<>uid://dblwkuyyrko44::::res://Assets/Wave.png
-Wave.tscn::PackedScene::8018609165334977810::1702641125::0::1::::<><>::res://Scripts/wave.gd<>uid://dblwkuyyrko44::::res://Assets/Wave.png
-World.tscn::PackedScene::7447857317755917198::1702641175::0::1::::<><>::uid://dra3h6qmatw81::::res://Scenes/player.tscn<>res://Scenes/World.gd<>uid://c3dg256hrishj::::res://Scenes/Level1.tscn<>uid://dxfimpgrwejhl::::res://Scenes/RollPoison.tscn
-::res://Scripts/::1702641032
-animator.gd::GDScript::-1::1702590779::0::1::::<>AnimatedSprite2D<>::
-item.gd::GDScript::-1::1702595305::0::1::::<>Area2D<>::
-player.gd::GDScript::-1::1702641032::0::1::::<>CharacterBody2D<>::
-PlayerState.gd::GDScript::-1::1702635990::0::1::::<>Node<>::
-RollPoison.gd::GDScript::-1::1702595284::0::1::::<>Area2D<>::
-wave.gd::GDScript::-1::1702577200::0::1::::<>Area2D<>::
+::res://Assets/Player/::1702658948
+Attacks.png::CompressedTexture2D::6342765054862924730::1702573225::1702658939::1::::<><>::
+Death.png::CompressedTexture2D::1198189078821188579::1702650052::1702658940::1::::<><>::
+Hurt.png::CompressedTexture2D::8802935604051145565::1702654032::1702658942::1::::<><>::
+Idle.png::CompressedTexture2D::6949717132722323123::1702569418::1702658941::1::::<><>::
+Jump.png::CompressedTexture2D::172179280410537711::1702573213::1702658944::1::::<><>::
+Pray.png::CompressedTexture2D::5236621841587034393::1702654022::1702658945::1::::<><>::
+Roll.png::CompressedTexture2D::7142082788995283522::1702581995::1702658948::1::::<><>::
+Run.png::CompressedTexture2D::4102952663306489269::1702570110::1702658947::1::::<><>::
+::res://Assets/Sprout/::1702659358
+Sprout-damage.png::CompressedTexture2D::3877329345594229428::1702659353::1702659353::1::::<><>::
+Sprout-death.png::CompressedTexture2D::7544433159041328039::1702659347::1702659347::1::::<><>::
+Sprout_attack.png::CompressedTexture2D::6274728391424538769::1702659358::1702659358::1::::<><>::
+Sprout_idle.png::CompressedTexture2D::14382370562681360::1702658967::1702658967::1::::<><>::
+Sprout_move.png::CompressedTexture2D::5198952104363951477::1702659341::1702659341::1::::<><>::
+::res://Scenes/::1702659146
+DamagePoison.tscn::PackedScene::1073815477782173962::1702655532::0::1::::<><>::res://Scripts/DamagePoison.gd<>uid://y3hhxjdoyq4s::::res://Assets/Potions - Full, Corked.png
+HealthPoison.tscn::PackedScene::8257537788940185724::1702655532::0::1::::<><>::uid://y3hhxjdoyq4s::::res://Assets/Potions - Full, Corked.png<>res://Scripts/HealthPoison.gd
+JumpPoison.tscn::PackedScene::3913831713026277571::1702655532::0::1::::<><>::res://Scripts/JumpPoison.gd<>uid://y3hhxjdoyq4s::::res://Assets/Potions - Full, Corked.png
+Level1.tscn::PackedScene::6744736264835861551::1702655533::0::1::::<><>::uid://cfwx6vjgc08va::::res://Assets/Tiles.png
+Player.tscn::PackedScene::-1::1702658976::0::1::::<><>::
+PlayerState.tscn::PackedScene::7185997263870803248::1702642069::0::1::::<><>::res://Scripts/PlayerState.gd
+Sprout.tscn::PackedScene::7451628706471251915::1702659146::0::1::::<><>::
+RollPoison.tscn::PackedScene::3659663151923634625::1702655532::0::1::::<><>::uid://y3hhxjdoyq4s::::res://Assets/Potions - Full, Corked.png
+ShieldPoison.tscn::PackedScene::3211008463421931996::1702655532::0::1::::<><>::res://Scripts/ShieldPoison.gd<>uid://y3hhxjdoyq4s::::res://Assets/Potions - Full, Corked.png
+Sorcer.tscn::PackedScene::6596916203034293822::1702658948::0::1::::<><>::res://Scripts/player.gd<>uid://cwmqockt0x12u
+Wave.tscn::PackedScene::8018609165334977810::1702642069::0::1::::<><>::res://Scripts/wave.gd<>uid://dblwkuyyrko44
+World.tscn::PackedScene::7447857317755917198::1702657903::0::1::::<><>::res://Scripts/World.gd<>uid://dra3h6qmatw81::::res://Scenes/player.tscn<>uid://c3dg256hrishj::::res://Scenes/Level1.tscn<>uid://bse1d80og72wj::::res://Scenes/RollPoison.tscn<>uid://bv05ibnhsv4ol::::res://Scenes/JumpPoison.tscn
+::res://Scripts/::1702658976
+Camera.gd::GDScript::-1::1702657706::0::1::::<>Camera2D<>::
+DamagePoison.gd::GDScript::-1::1702653017::0::1::::<>Area2D<>::
+HealthPoison.gd::GDScript::-1::1702653011::0::1::::<>Area2D<>::
+item.gd::GDScript::-1::1702651569::0::1::::<>Area2D<>::
+JumpPoison.gd::GDScript::-1::1702651348::0::1::::<>Area2D<>::
+player.gd::GDScript::-1::1702658941::0::1::::<>CharacterBody2D<>::
+PlayerState.gd::GDScript::-1::1702654841::0::1::::<>Node<>::
+RollPoison.gd::GDScript::-1::1702641990::0::1::::<>Area2D<>::
+ShieldPoison.gd::GDScript::-1::1702653147::0::1::::<>Area2D<>::
+wave.gd::GDScript::-1::1702650754::0::1::::<>Area2D<>::
+World.gd::GDScript::-1::1702650754::0::1::::<>Node2D<>::

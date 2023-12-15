@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpwao8y2klaiu"]
+
+[ext_resource type="Texture2D" uid="uid://y3hhxjdoyq4s" path="res://Assets/Potions - Full, Corked.png" id="1_3dr8y"]
+[ext_resource type="Script" path="res://Scripts/HealthPoison.gd" id="1_8ehc2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4t1m"]
+size = Vector2(13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2s10a"]
+atlas = ExtResource("1_3dr8y")
+region = Rect2(0, 0, 16, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hbf87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2s10a")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Health" type="Area2D"]
+script = ExtResource("1_8ehc2")
+Name = "Health"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 2)
+shape = SubResource("RectangleShape2D_o4t1m")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, -8.34465e-07)
+scale = Vector2(0.9375, 0.833333)
+sprite_frames = SubResource("SpriteFrames_hbf87")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
