@@ -11,22 +11,15 @@ position = Vector2(19, -1)
 script = ExtResource("1_4qic6")
 
 [node name="Player" parent="." instance=ExtResource("1_jx6ty")]
-position = Vector2(14, 59)
-
-[node name="Level1" parent="." instance=ExtResource("2_teif6")]
-position = Vector2(-15, -51)
-layer_1/name = ""
-layer_1/enabled = true
-layer_1/modulate = Color(1, 1, 1, 1)
-layer_1/y_sort_enabled = false
-layer_1/y_sort_origin = 0
-layer_1/z_index = 0
-layer_1/tile_data = PackedInt32Array()
+position = Vector2(-324, -88)
 
 [node name="RollPoison" parent="." instance=ExtResource("3_06tvi")]
-position = Vector2(109, 143)
+position = Vector2(107, -19)
 
 [node name="JumpPoison" parent="." instance=ExtResource("5_m53mc")]
-position = Vector2(194, 110)
+position = Vector2(190, -27)
+
+[node name="Level1" parent="." instance=ExtResource("2_teif6")]
+position = Vector2(61, -50)
 
 [connection signal="hit" from="Player" to="." method="_on_player_hit"]
