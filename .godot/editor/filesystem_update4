@@ -1,0 +1,11 @@
+res://Scenes/player.tscn
+res://Scripts/player.gd
+res://Scenes/PlayerState.tscn
+res://Scenes/Wave.tscn
+res://Scenes/RollPoison.tscn
+res://Scenes/World.tscn
+res://Scenes/World.gd
+res://Scripts/PlayerState.gd
+res://Scripts/item.gd
+res://Scripts/RollPoison.gd
+res://Scripts/wave.gd

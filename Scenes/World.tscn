@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://ded2ee5j1uhic"]
+
+[ext_resource type="Script" path="res://Scripts/World.gd" id="1_4qic6"]
+[ext_resource type="PackedScene" uid="uid://dra3h6qmatw81" path="res://Scenes/player.tscn" id="1_jx6ty"]
+[ext_resource type="PackedScene" uid="uid://c3dg256hrishj" path="res://Scenes/Level1.tscn" id="2_teif6"]
+[ext_resource type="PackedScene" uid="uid://dxfimpgrwejhl" path="res://Scenes/RollPoison.tscn" id="3_06tvi"]
+
+[node name="World" type="Node2D"]
+position = Vector2(19, -1)
+script = ExtResource("1_4qic6")
+
+[node name="Player" parent="." instance=ExtResource("1_jx6ty")]
+position = Vector2(32, 61)
+
+[node name="Level1" parent="." instance=ExtResource("2_teif6")]
+position = Vector2(-18, -47)
+
+[node name="RollPoison" parent="." instance=ExtResource("3_06tvi")]
+position = Vector2(109, 143)
+
+[connection signal="hit" from="Player" to="." method="_on_player_hit"]
