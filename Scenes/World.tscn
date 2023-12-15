@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://ded2ee5j1uhic"]
 
 [ext_resource type="Script" path="res://Scripts/World.gd" id="1_4qic6"]
-[ext_resource type="PackedScene" uid="uid://dra3h6qmatw81" path="res://Scenes/player.tscn" id="1_jx6ty"]
+[ext_resource type="PackedScene" uid="uid://oqixk1oxagye" path="res://Scenes/Player.tscn" id="1_jx6ty"]
 [ext_resource type="PackedScene" uid="uid://c3dg256hrishj" path="res://Scenes/Level1.tscn" id="2_teif6"]
 [ext_resource type="PackedScene" uid="uid://bse1d80og72wj" path="res://Scenes/RollPoison.tscn" id="3_06tvi"]
 [ext_resource type="PackedScene" uid="uid://bv05ibnhsv4ol" path="res://Scenes/JumpPoison.tscn" id="5_m53mc"]
